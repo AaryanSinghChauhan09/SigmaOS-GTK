@@ -1,3 +1,8 @@
-/target
-**/*.rs.bk
-Cargo.lock
+__pycache__/
+*.pyc
+target/
+build/
+dist/
+*.iso
+.venv/
+node_modules/

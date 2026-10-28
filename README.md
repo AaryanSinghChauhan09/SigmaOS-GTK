@@ -1,17 +1,11 @@
-# SigmaOS-gtk
+# SigmaOS-GTK
 
-Linux Mint/Omarchy-inspired component for SigmaOS.
+GTK build patches & theming glue
 
-## Inspiration
+Engine: gtk_lib
+Language: shell
+Visibility: public
 
-This component is inspired by Linux Mint and Omarchy to provide:
-- User-friendly functionality
-- Desktop integration
-- System management
-- Clear documentation
+## SigmaOS multi-repository ecosystem
 
-## Status
-
-- Architecture: Designed
-- Implementation: Basic
-- Testing: Basic
+- **Upstream inspirations**: - https://github.com/linuxmint/gtk
