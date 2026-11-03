@@ -7,7 +7,7 @@ use gtk::gtk;
 #[derive(Parser)]
 struct Cli;
 
-fn main() -> Result<()> { -> anyhow::Result<()> {
+fn main() -> Result<()> { -> Result<()> { -> anyhow::Result<()> {
     let config = gtk::Config::default();
     let mut component = gtk::new(config);
     component.initialize()?;
