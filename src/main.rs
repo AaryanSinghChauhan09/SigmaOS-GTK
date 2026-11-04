@@ -1,31 +1,22 @@
-use std::env;
-use log::{info, warn, error, debug};
+mod config;
+mod error;
+mod service;
+
+use config::Config;
+use service::Service;
 use anyhow::Result;
-use clap::Parser;
-use gtk::gtk;
 
-#[derive(Parser)]
-struct Cli;
-
-fn main() -> Result<()> { -> Result<()> { -> anyhow::Result<()> {
-    let config = gtk::Config::default();
-    let mut component = gtk::new(config);
-    component.initialize()?;
-    println!("SigmaOS-gtk ready");
+fn main() -> Result<()> {
+    env_logger::init();
+    
+    let config = Config::default();
+    let mut service = Service::new(config);
+    
+    service.start()?;
+    println!("Service started successfully");
+    
+    service.stop()?;
+    println!("Service stopped successfully");
+    
     Ok(())
-}
-
-#[derive(Debug, Clone)]
-struct Config {
-    verbose: bool,
-    dry_run: bool,
-}
-
-impl Config {
-    fn from_env() -> Self {
-        Config {
-            verbose: env::var("VERBOSE").is_ok(),
-            dry_run: env::var("DRY_RUN").is_ok(),
-        }
-    }
 }

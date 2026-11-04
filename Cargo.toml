@@ -1,14 +1,17 @@
 [package]
-name = "gtk"
+name = "sigmaos-component"
 version = "0.1.0"
 edition = "2021"
-description = "SigmaOS SigmaOS-gtk"
-license = "MIT"
-repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-gtk"
+authors = ["SigmaOS Team"]
+license = "MIT OR Apache-2.0"
+description = "SigmaOS component following engineering principles"
 
 [dependencies]
-tokio = { version = "1.35", features = ["full"] }
-serde = { version = "1.0", features = ["derive"] }
-log = "0.4"
 anyhow = "1.0"
-clap = { version = "4.5", features = ["derive"] }
+thiserror = "1.0"
+log = "0.4"
+env_logger = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+toml = "0.8"
+
+[dev-dependencies]
